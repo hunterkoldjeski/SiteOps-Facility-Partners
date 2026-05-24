@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SiteOps Facility Partners | Portfolio Facilities Management & Site Operations</title>
+  <meta name="description" content="SiteOps Facility Partners provides facilities management, vendor coordination, site operations support, and property condition oversight for commercial real estate portfolios." />
+  <meta name="keywords" content="facilities management, vendor coordination, commercial property management, property condition reporting, site operations, portfolio facilities management" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1F33;
+      --navy-dark: #071827;
+      --charcoal: #26323F;
+      --offwhite: #F6F3EE;
+      --steel: #7A8693;
+      --brass: #B08D57;
+      --brass-dark: #9C7A48;
+      --white: #FFFFFF;
+      --border: rgba(11, 31, 51, 0.12);
+      --shadow: 0 18px 45px rgba(7, 24, 39, 0.16);
+      --soft-shadow: 0 12px 30px rgba(11, 31, 51, 0.08);
+      --radius: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--charcoal);
+      background: var(--offwhite);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.77rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: var(--brass);
+      display: inline-block;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Manrope', sans-serif;
+      color: var(--navy);
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.9rem);
+      max-width: 950px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      max-width: 850px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1rem;
+      color: rgba(38, 50, 63, 0.88);
+    }
+
+    .lead {
+      font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 760px;
+      margin-top: 26px;
+    }
+
+    .section-lead {
+      font-size: 1.12rem;
+      max-width: 790px;
+      margin-top: 22px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 0.92rem;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--brass);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--brass-dark);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      color: var(--white);
+    }
+
+    .btn-secondary.dark {
+      border-color: rgba(11, 31, 51, 0.22);
+      color: var(--navy);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background: rgba(7, 24, 39, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--white);
+      min-width: max-content;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(176, 141, 87, 0.75);
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+      padding: 8px;
+    }
+
+    .mark span {
+      background: var(--brass);
+      border-radius: 2px;
+      opacity: 0.95;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .brand-text small {
+      display: block;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.66);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    nav a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      color: var(--navy);
+      background: var(--brass);
+      padding: 10px 16px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 80% 20%, rgba(176, 141, 87, 0.18), transparent 28%), linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: var(--white);
+      padding: 170px 0 95px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: auto -120px -220px auto;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      color: var(--white);
+    }
+
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .property-card {
+      min-height: 430px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .property-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 46px 46px;
+      opacity: 0.45;
+    }
+
+    .building {
+      position: absolute;
+      left: 45px;
+      right: 45px;
+      bottom: 0;
+      height: 300px;
+      display: grid;
+      grid-template-columns: 1fr 0.72fr 0.9fr;
+      gap: 14px;
+      align-items: end;
+    }
+
+    .tower {
+      background: linear-gradient(180deg, rgba(246, 243, 238, 0.92), rgba(122, 134, 147, 0.55));
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 10px 10px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tower:nth-child(1) { height: 230px; }
+    .tower:nth-child(2) { height: 300px; }
+    .tower:nth-child(3) { height: 190px; }
+
+    .tower::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(11,31,51,0.22) 0 8px,
+        transparent 8px 22px
+      );
+    }
+
+    .overlay-card {
+      position: absolute;
+      z-index: 2;
+      background: rgba(246, 243, 238, 0.96);
+      color: var(--navy);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(255,255,255,0.55);
+      width: 210px;
+    }
+
+    .overlay-card strong {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .overlay-card small {
+      color: rgba(38, 50, 63, 0.72);
+      line-height: 1.35;
+      display: block;
+    }
+
+    .card-one { top: 28px; left: 24px; }
+    .card-two { right: 24px; bottom: 32px; }
+
+    section {
+      padding: 105px 0;
+    }
+
+    .white {
+      background: var(--white);
+    }
+
+    .offwhite {
+      background: var(--offwhite);
+    }
+
+    .dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .dark h2,
+    .dark h3,
+    .dark h4 {
+      color: var(--white);
+    }
+
+    .dark p {
+      color: rgba(255,255,255,0.74);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .problem-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      background: var(--offwhite);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 18px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .problem-item::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brass);
+      margin-top: 9px;
+      flex: 0 0 auto;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 44px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(176, 141, 87, 0.13);
+      color: var(--brass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+    }
+
+    .dark .card {
+      background: rgba(255, 255, 255, 0.055);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .dark .card p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .dark .card-icon {
+      background: rgba(176, 141, 87, 0.18);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 46px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      min-height: 350px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 14px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-top: 22px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .service-card li {
+      color: rgba(38, 50, 63, 0.86);
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .service-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brass);
+    }
+
+    .market-card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .market-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .market-card p {
+      font-size: 0.92rem;
+    }
+
+    .quote-block {
+      border-left: 4px solid var(--brass);
+      padding-left: 26px;
+      margin-top: 34px;
+      font-family: 'Manrope', sans-serif;
+      color: var(--navy);
+      font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+      line-height: 1.22;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 44px;
+    }
+
+    .process-step {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .step-number {
+      font-family: 'Manrope', sans-serif;
+      color: var(--brass);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .cta {
+      background: radial-gradient(circle at 10% 20%, rgba(176,141,87,0.18), transparent 30%), linear-gradient(135deg, var(--navy), var(--navy-dark));
+      color: var(--white);
+      padding: 95px 0;
+    }
+
+    .cta h2 {
+      color: var(--white);
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.76);
+      max-width: 740px;
+      margin-top: 22px;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--soft-shadow);
+      margin-top: 44px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(11,31,51,0.16);
+      border-radius: 11px;
+      padding: 14px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      background: var(--offwhite);
+    }
+
+    textarea {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+      color: var(--steel);
+      margin-top: 20px;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 48px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.64);
+      max-width: 580px;
+      margin-top: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 34px;
+      padding-top: 22px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .split,
+      .contact-panel,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4,
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 145px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand-text small {
+        display: none;
+      }
+
+      .hero {
+        padding: 125px 0 70px;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .hero-panel {
+        padding: 14px;
+      }
+
+      .property-card {
+        min-height: 340px;
+      }
+
+      .building {
+        left: 25px;
+        right: 25px;
+        height: 250px;
+      }
+
+      .tower:nth-child(1) { height: 190px; }
+      .tower:nth-child(2) { height: 250px; }
+      .tower:nth-child(3) { height: 160px; }
+
+      .overlay-card {
+        width: 180px;
+        padding: 12px 13px;
+      }
+
+      .card-one { top: 18px; left: 14px; }
+      .card-two { right: 14px; bottom: 20px; }
+
+      .grid-3,
+      .grid-4,
+      .services,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        padding: 24px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="SiteOps Facility Partners home">
+        <div class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="brand-text">
+          <strong>SiteOps</strong>
+          <small>Facility Partners</small>
+        </div>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#markets">Markets</a>
+        <a href="#model">Operating Model</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Request Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Portfolio Facilities Management</div>
+          <h1>The Operating Partner for High-Performance Real Estate Portfolios</h1>
+          <p class="lead">SiteOps Facility Partners provides facilities management, vendor coordination, site operations support, and property condition oversight for commercial real estate owners, asset managers, and property management teams.</p>
+          <p class="lead">We help keep properties clean, functional, responsive, and professionally maintained across both interior and exterior operating environments.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#contact">Request a Portfolio Facilities Review</a>
+            <a class="btn btn-secondary" href="#services">Explore Our Services</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Commercial property operations illustration">
+          <div class="property-card">
+            <div class="overlay-card card-one">
+              <strong>Vendor Coordination</strong>
+              <small>Clear expectations, communication, and completion tracking.</small>
+            </div>
+            <div class="overlay-card card-two">
+              <strong>Portfolio Control</strong>
+              <small>Visibility across condition, issues, and execution.</small>
+            </div>
+            <div class="building" aria-hidden="true">
+              <div class="tower"></div>
+              <div class="tower"></div>
+              <div class="tower"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offwhite">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Built for Accountability</div>
+          <h2>Facilities Management Built for Portfolio-Level Accountability</h2>
+        </div>
+        <div class="content-stack">
+          <p>Commercial real estate performance depends on more than leasing, financing, and asset strategy. Every property also has a physical operating layer: the daily conditions, vendors, service issues, maintenance needs, exterior standards, interior presentation, and recurring problems that shape how the asset is experienced.</p>
+          <p>When that layer is not managed with discipline, value erodes quietly.</p>
+          <p>SiteOps Facility Partners exists to manage that operating layer with clarity, consistency, and accountability.</p>
+          <p>We support property teams by coordinating facilities needs, monitoring site conditions, managing vendor execution, documenting issues, and helping properties maintain the standard expected of serious commercial real estate assets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="white">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">The Problem</div>
+          <h2>Operational Drift Is Expensive</h2>
+          <p class="section-lead">Most property issues do not begin as major failures. They begin as small signs of operational drift.</p>
+          <div class="quote-block">Real estate portfolios lose value when site-level execution is treated as an afterthought.</div>
+        </div>
+        <div>
+          <div class="problem-list">
+            <div class="problem-item">A missed walkthrough.</div>
+            <div class="problem-item">An unresolved work order.</div>
+            <div class="problem-item">An inconsistent vendor.</div>
+            <div class="problem-item">A dirty exterior area.</div>
+            <div class="problem-item">A recurring tenant complaint.</div>
+            <div class="problem-item">A maintenance issue that no one owns.</div>
+          </div>
+          <p class="section-lead">Over time, these details compound. SiteOps helps prevent that drift by giving property teams a dedicated facilities partner focused on visibility, coordination, execution, and follow-through.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="offwhite">
+      <div class="container">
+        <div class="eyebrow">What We Do</div>
+        <h2>We Manage the Physical Operating Layer of Commercial Properties</h2>
+        <p class="section-lead">SiteOps supports the day-to-day and recurring facilities needs that keep properties operating at a professional standard. Our work sits between ownership, property management, vendors, tenants, and the physical site itself.</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">01</div>
+            <h3>Facilities Management Support</h3>
+            <p>Ongoing support for recurring physical needs, including coordination, issue tracking, vendor communication, and operating support.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">02</div>
+            <h3>Vendor Coordination</h3>
+            <p>A more accountable layer between property teams and service providers, reducing management burden and improving follow-through.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">03</div>
+            <h3>Property Condition Oversight</h3>
+            <p>Routine visibility through walkthroughs, documentation, reporting, and condition snapshots designed to surface issues early.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">04</div>
+            <h3>Interior & Exterior Operations</h3>
+            <p>Support across common areas, exterior presentation, trash areas, service corridors, parking areas, lighting, signage, and maintenance needs.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">05</div>
+            <h3>Issue Resolution Support</h3>
+            <p>From recurring site issues to one-off needs, SiteOps helps identify, coordinate, and follow through until the problem is addressed.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">06</div>
+            <h3>Portfolio Operating Standards</h3>
+            <p>For multi-site owners and operators, we help create consistency through reporting rhythms, standards, and vendor accountability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="model" class="dark">
+      <div class="container">
+        <div class="eyebrow">Operating Model</div>
+        <h2>Visibility. Coordination. Execution. Accountability.</h2>
+        <p class="section-lead">A disciplined facilities partner should do more than respond to problems. It should create visibility, coordinate action, and protect standards across the portfolio.</p>
+        <div class="grid-4">
+          <div class="card">
+            <div class="card-icon">01</div>
+            <h3>Visibility</h3>
+            <p>You cannot manage what you cannot see. SiteOps helps property teams maintain site-level visibility through condition reviews, walkthroughs, documentation, and recurring reporting.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">02</div>
+            <h3>Coordination</h3>
+            <p>We help coordinate vendors, service requests, maintenance needs, and site-level communication so the right work reaches the right party with the right expectations.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">03</div>
+            <h3>Execution</h3>
+            <p>Facilities management ultimately depends on execution. SiteOps supports completion through direct coordination, vendor oversight, issue tracking, and follow-through.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">04</div>
+            <h3>Accountability</h3>
+            <p>Every property needs a standard. We help reinforce that standard through communication, reporting, documentation, and consistent operating rhythms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="white">
+      <div class="container">
+        <div class="eyebrow">Services</div>
+        <h2>Facilities Support Across the Full Property Environment</h2>
+        <p class="section-lead">SiteOps is built to support both internal and external facilities needs. Our service model is designed to scale from individual properties to multi-site commercial portfolios.</p>
+        <div class="services">
+          <div class="service-card">
+            <h3>Interior Facilities Support</h3>
+            <p>Professional support for the interior environments that tenants, customers, employees, and visitors experience every day.</p>
+            <ul>
+              <li>Common area condition oversight</li>
+              <li>Lobby and entrance presentation</li>
+              <li>Restroom condition coordination</li>
+              <li>Interior maintenance issue documentation</li>
+              <li>Lighting and fixture issue reporting</li>
+              <li>Janitorial coordination</li>
+              <li>Work order follow-up</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Exterior Facilities Support</h3>
+            <p>Exterior property conditions shape first impressions and long-term asset perception.</p>
+            <ul>
+              <li>Exterior condition reviews</li>
+              <li>Parking lot and sidewalk issue reporting</li>
+              <li>Trash enclosure oversight</li>
+              <li>Landscaping coordination touchpoints</li>
+              <li>Pressure washing coordination</li>
+              <li>Exterior lighting issue documentation</li>
+              <li>Curb appeal and site presentation reporting</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Vendor Management & Coordination</h3>
+            <p>Vendors are essential to property performance, but fragmented vendor management creates operational burden.</p>
+            <ul>
+              <li>Vendor communication</li>
+              <li>Service request coordination</li>
+              <li>Quote coordination</li>
+              <li>Scheduling support</li>
+              <li>Completion tracking</li>
+              <li>Issue escalation</li>
+              <li>Vendor performance visibility</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Property Condition Reporting</h3>
+            <p>Property teams need clear, practical visibility into what is happening on-site.</p>
+            <ul>
+              <li>Site walkthrough summaries</li>
+              <li>Photo-based condition reports</li>
+              <li>Priority issue lists</li>
+              <li>Recurring problem documentation</li>
+              <li>Before-and-after documentation</li>
+              <li>Vendor completion confirmation</li>
+              <li>Portfolio condition snapshots</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Maintenance Coordination</h3>
+            <p>SiteOps helps property teams move maintenance needs from observation to action.</p>
+            <ul>
+              <li>Minor maintenance issue identification</li>
+              <li>Service provider coordination</li>
+              <li>Work order routing</li>
+              <li>Repair documentation</li>
+              <li>Recurring maintenance tracking</li>
+              <li>Follow-up on unresolved issues</li>
+              <li>Vendor quote coordination</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Portfolio Facilities Support</h3>
+            <p>For owners and operators managing multiple properties, SiteOps helps create a consistent operating standard across the portfolio.</p>
+            <ul>
+              <li>Multi-site condition reporting</li>
+              <li>Standardized facilities checklists</li>
+              <li>Recurring operating rhythms</li>
+              <li>Vendor accountability systems</li>
+              <li>Regional site support</li>
+              <li>Portfolio-wide service visibility</li>
+              <li>Management reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="markets" class="offwhite">
+      <div class="container">
+        <div class="eyebrow">Markets Served</div>
+        <h2>Built for Serious Commercial Real Estate Operators</h2>
+        <p class="section-lead">SiteOps Facility Partners is designed for property teams that manage valuable physical assets and need dependable operating support across the facilities layer.</p>
+        <div class="grid-4">
+          <div class="market-card"><h3>Commercial Property Owners</h3><p>Greater visibility into site conditions, vendor execution, and operating standards.</p></div>
+          <div class="market-card"><h3>Asset Managers</h3><p>Confidence that property-level details are monitored, documented, and addressed.</p></div>
+          <div class="market-card"><h3>Property Management Firms</h3><p>A reliable facilities partner to reduce vendor burden and support daily execution.</p></div>
+          <div class="market-card"><h3>Retail Centers</h3><p>Exterior presentation, cleanliness, lighting, signage, and common-area support.</p></div>
+          <div class="market-card"><h3>Office Properties</h3><p>Interior experience, responsiveness, maintenance coordination, and presentation.</p></div>
+          <div class="market-card"><h3>Industrial & Flex Properties</h3><p>Practical site oversight, exterior condition monitoring, and recurring facilities support.</p></div>
+          <div class="market-card"><h3>Mixed-Use Properties</h3><p>Support for complex environments with retail, office, parking, and common-area needs.</p></div>
+          <div class="market-card"><h3>Multi-Site Operators</h3><p>Consistency, reporting, and facilities coordination across multiple locations.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Why SiteOps</div>
+          <h2>Why Property Teams Choose SiteOps</h2>
+          <p class="section-lead">Commercial real estate teams are under pressure to do more with less. Property managers are stretched. Vendors are fragmented. Ownership wants visibility. Tenants expect fast responses. Sites still need to look and operate professionally every day.</p>
+        </div>
+        <div class="grid-3" style="margin-top:0;">
+          <div class="card"><h3>One Partner Across the Facilities Layer</h3><p>SiteOps provides an operating partner focused on the physical condition and execution needs of the property.</p></div>
+          <div class="card"><h3>Better Visibility</h3><p>We help document what is happening on-site so owners, asset managers, and property managers can make clearer decisions.</p></div>
+          <div class="card"><h3>Less Vendor Fragmentation</h3><p>We help coordinate vendors, track completion, and communicate status so teams spend less time chasing updates.</p></div>
+          <div class="card"><h3>Stronger Property Standards</h3><p>We help maintain cleaner, more functional, and more professional environments across interior and exterior areas.</p></div>
+          <div class="card"><h3>Faster Issue Identification</h3><p>Small issues become expensive when ignored. Our condition oversight model brings problems to the surface earlier.</p></div>
+          <div class="card"><h3>Scalable Portfolio Support</h3><p>SiteOps is being built for multi-site operations, not one-off service calls.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Portfolio Standard</div>
+          <h2>A Higher Standard for Facilities Management</h2>
+        </div>
+        <div class="content-stack">
+          <p>High-performance real estate portfolios need more than reactive maintenance.</p>
+          <p>They need a partner who understands that property conditions, vendor execution, tenant experience, and asset value are connected.</p>
+          <p>SiteOps brings a portfolio-minded approach to facilities management. We view every site as part of a larger operating system: one where visibility, standards, coordination, and execution all affect performance.</p>
+          <p>Our goal is to help clients protect the physical quality of their assets, reduce operational friction, and create a more reliable facilities management experience across the properties they control.</p>
+          <div class="quote-block">Built for property teams that care about standards before problems become visible.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offwhite">
+      <div class="container">
+        <div class="eyebrow">Engagement Process</div>
+        <h2>How Engagements Begin</h2>
+        <p class="section-lead">Every property portfolio has a different operating structure. SiteOps begins by understanding the property, the portfolio, the current vendor environment, and the operational pressure points.</p>
+        <div class="process">
+          <div class="process-step">
+            <span class="step-number">Step 01</span>
+            <h3>Portfolio Facilities Review</h3>
+            <p>We review the property or portfolio context, current facilities needs, management structure, recurring pain points, and service expectations.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">Step 02</span>
+            <h3>Site Operations Assessment</h3>
+            <p>We identify the operating gaps affecting condition, coordination, responsiveness, reporting, and vendor accountability.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">Step 03</span>
+            <h3>Facilities Support Plan</h3>
+            <p>We define the right level of support, including reporting cadence, vendor coordination needs, site walkthroughs, service categories, and communication structure.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">Step 04</span>
+            <h3>Execution & Reporting</h3>
+            <p>SiteOps begins supporting the property team through coordinated execution, documentation, issue tracking, and recurring management updates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="white">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2>About SiteOps Facility Partners</h2>
+        </div>
+        <div class="content-stack">
+          <p>SiteOps Facility Partners is a facilities management and site operations company built for the next generation of commercial real estate operations.</p>
+          <p>We serve property owners, asset managers, property management firms, and commercial operators who need a more accountable partner across the physical layer of their assets.</p>
+          <p>Our work is grounded in a simple belief: commercial properties perform better when facilities management is treated as a strategic operating function, not a scattered collection of service calls.</p>
+          <p>SiteOps brings together property condition visibility, vendor coordination, issue tracking, maintenance support, and interior and exterior facilities oversight into a more disciplined operating model.</p>
+          <p>We are building toward a higher standard for facilities management: one designed for serious portfolios, professional operators, and assets that cannot afford operational drift.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="eyebrow">Next Step</div>
+        <h2>Bring More Control to the Facilities Layer of Your Portfolio</h2>
+        <p>Whether you manage a single commercial property or a growing portfolio, SiteOps Facility Partners can help improve visibility, coordination, and execution across the physical operating environment.</p>
+        <p>If your property team is spending too much time chasing vendors, reacting to recurring issues, or managing site-level details without enough support, SiteOps is built to help.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#contact">Request a Portfolio Facilities Review</a>
+          <a class="btn btn-secondary" href="mailto:info@siteopsfacilitypartners.com">Contact SiteOps</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="offwhite">
+      <div class="container">
+        <div class="eyebrow">Contact</div>
+        <h2>Start the Conversation</h2>
+        <p class="section-lead">Tell us about your property, portfolio, or facilities management needs. SiteOps will review the opportunity and determine where we can provide the most immediate operational value.</p>
+        <div class="contact-panel">
+          <div>
+            <h3>Request a Portfolio Facilities Review</h3>
+            <p class="section-lead">Share a few details about your property, portfolio, or facilities management needs. Our team will review your inquiry and identify where SiteOps can provide the most immediate value across visibility, coordination, vendor accountability, and site-level execution.</p>
+            <p class="form-note">Facilities Management. Vendor Coordination. Portfolio Control.</p>
+          </div>
+          <form action="https://formspree.io/f/xlgvwbzz" method="POST">
+            <input type="text" name="name" placeholder="Name" aria-label="Name" required />
+            <input type="text" name="company" placeholder="Company" aria-label="Company" required />
+            <input type="text" name="role" placeholder="Role" aria-label="Role" />
+            <input type="email" name="email" placeholder="Email" aria-label="Email" required />
+            <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" />
+            <select name="property-type" aria-label="Property type">
+              <option value="">Property Type</option>
+              <option>Retail Center</option>
+              <option>Office</option>
+              <option>Industrial / Flex</option>
+              <option>Mixed-Use</option>
+              <option>Multi-Site Portfolio</option>
+              <option>Other Commercial Property</option>
+            </select>
+            <input type="text" name="number-of-properties" placeholder="Number of Properties" aria-label="Number of Properties" />
+            <input type="text" name="market" placeholder="Market / Location" aria-label="Market or Location" />
+            <select class="full" name="primary-need" aria-label="Primary facilities need">
+              <option value="">Primary Facilities Need</option>
+              <option>Vendor Coordination</option>
+              <option>Property Condition Reporting</option>
+              <option>Interior Facilities Support</option>
+              <option>Exterior Facilities Support</option>
+              <option>Maintenance Coordination</option>
+              <option>Portfolio Facilities Support</option>
+            </select>
+            <textarea class="full" name="message" placeholder="Message" aria-label="Message" required></textarea>
+            <input type="hidden" name="_subject" value="New SiteOps Portfolio Facilities Review Inquiry" />
+            <button class="btn btn-primary full" type="submit">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#top" aria-label="SiteOps Facility Partners home">
+            <div class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="brand-text">
+              <strong>SiteOps</strong>
+              <small>Facility Partners</small>
+            </div>
+          </a>
+          <p>Portfolio Facilities Management & Site Operations. Facilities management, vendor coordination, property condition oversight, and site operations support for commercial real estate portfolios.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#markets">Markets</a>
+          <a href="#model">Operating Model</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="copyright">© 2026 SiteOps Facility Partners. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
